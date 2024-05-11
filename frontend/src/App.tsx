@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RecoilRoot } from "recoil";
-import Layout from "./Layout";
+import Layout from "./components/Layout";
 import { ThemeProvider } from "./ThemeProvider";
 
 const queryClient = new QueryClient();
