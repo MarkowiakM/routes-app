@@ -1,14 +1,14 @@
 export const MAP_LAYERS = [
   {
     name: "Open Street Map",
-    checked: true,
+    checked: false,
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   },
   {
     name: "Google Map",
-    checked: false,
+    checked: true,
     attribution: "Google Maps",
     url: "https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}",
   },
