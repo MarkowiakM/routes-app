@@ -17,7 +17,7 @@ const PathPoint: FC<Props> = ({ point }) => {
     <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="location-marker__svg">
   <circle cx="18" cy="18" r="12" fill="#fff" stroke="#000" stroke-width="2"/>
 </svg>`,
-    className: `location-marker ${false ? "active" : ""}`,
+    className: "location-marker",
     iconSize: [20, 20],
     iconAnchor: [10, 10],
   });

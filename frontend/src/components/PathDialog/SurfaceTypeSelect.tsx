@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SURFACE_TYPES } from "@/constants/surfaceTypes";
+import { SURFACE_COLORS, SURFACE_TYPES } from "@/constants/surfaceTypes";
 import {
   Select,
   SelectTrigger,
@@ -24,7 +24,13 @@ const SurfaceTypeSelect: FC<Props> = ({ value, setValue }) => {
         <SelectContent>
           {SURFACE_TYPES.map(type => (
             <SelectItem key={type} value={type}>
-              {type}
+              <div className="flex flex-row items-center">
+                <div
+                  className="mr-4 h-4 w-4 rounded"
+                  style={{ backgroundColor: SURFACE_COLORS[type] }}
+                />
+                <span>{type}</span>
+              </div>
             </SelectItem>
           ))}
         </SelectContent>

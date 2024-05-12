@@ -1,6 +1,8 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useRecoilState } from "recoil";
 import { isNewPathDialogOpenState } from "@/state/isNewPathDialogOpenState";
+import { newPathState } from "@/state/newPath";
+import { SurfaceType } from "@/types/SurfaceType";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,8 +10,12 @@ import SurfaceTypeSelect from "./SurfaceTypeSelect";
 
 const AddPathDialog: FC = () => {
   const [isNewPathDialogOpen, setIsNewPathDialogOpen] = useRecoilState(isNewPathDialogOpenState);
-  const [surfaceType, setSurfaceType] = useState("Droga asfaltowa");
-  const points = 10;
+  const [newPath, setNewPath] = useRecoilState(newPathState);
+
+  const onCancelClick = () => {
+    setIsNewPathDialogOpen(false);
+    setNewPath({ surface: "Droga asfaltowa", points: [] })
+  };
 
   return (
     <>
@@ -19,14 +25,17 @@ const AddPathDialog: FC = () => {
             <CardTitle>Nowa trasa</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
-            <SurfaceTypeSelect value={surfaceType} setValue={setSurfaceType} />
+            <SurfaceTypeSelect
+              value={newPath.surface}
+              setValue={(surface: SurfaceType) => setNewPath({ ...newPath, surface })}
+            />
             <div className="flex justify-between">
-              <span>Dodane punkty:</span>
-              <Badge>{points}</Badge>
+              <span>Punkty na trasie:</span>
+              <Badge>{newPath.points.length}</Badge>
             </div>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button variant="outline" onClick={() => setIsNewPathDialogOpen(false)}>
+            <Button variant="outline" onClick={onCancelClick}>
               Anuluj
             </Button>
             <Button onClick={() => setIsNewPathDialogOpen(false)}>Zapisz</Button>

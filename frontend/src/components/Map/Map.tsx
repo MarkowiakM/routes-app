@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { LayersControl, MapContainer, TileLayer, ZoomControl, LayerGroup } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { useRecoilValue } from "recoil";
+import { isNewPathDialogOpenState } from "@/state/isNewPathDialogOpenState";
 import { LOCATION } from "@/constants/location";
 import { MAP_LAYERS } from "@/constants/mapLayers";
 import "./Map.css";
@@ -11,12 +13,17 @@ interface MapProps {
 }
 
 const Map: FC<MapProps> = ({ children }) => {
+  const isNewPathDialogOpen = useRecoilValue(isNewPathDialogOpenState);
+  const mapRef = useRef(null);
+
   return (
     <MapContainer
       center={LOCATION as LatLngExpression}
       zoom={12}
       scrollWheelZoom={true}
       zoomControl={false}
+      dragging={!isNewPathDialogOpen}
+      ref={mapRef}
     >
       <LayersControl position="bottomright">
         {MAP_LAYERS.map(layer => (
