@@ -20,23 +20,29 @@
   filter: var(--leaflet-tile-filter, none);
 } */
 
-/* .leaflet-popup-tip-container,
+.leaflet-popup-tip-container,
 .leaflet-popup-close-button {
   display: none;
-} */
+}
 
-/* .leaflet-popup-content-wrapper {
-  padding: 1px;
-  border-radius: 8px;
+.leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: 6px;
   margin: 0;
-  bottom: -40px !important;
+  bottom: -10px !important;
   background-color: hsl(var(--background));
   cursor: pointer;
-} */
+}
 
-/* .leaflet-popup {
-  bottom: -120px !important;
-} */
+.leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-popup {
+  bottom: -92px !important;
+  left: 0 !important;
+}
 
 /* .location-marker svg {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));

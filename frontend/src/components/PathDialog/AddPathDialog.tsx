@@ -8,7 +8,7 @@ import SurfaceTypeSelect from "./SurfaceTypeSelect";
 
 const AddPathDialog: FC = () => {
   const [isNewPathDialogOpen, setIsNewPathDialogOpen] = useRecoilState(isNewPathDialogOpenState);
-  const [surfaceType, setSurfaceType] = useState("Asfalt");
+  const [surfaceType, setSurfaceType] = useState("Droga asfaltowa");
   const points = 10;
 
   return (

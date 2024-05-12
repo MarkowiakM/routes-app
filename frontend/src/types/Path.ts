@@ -1,6 +1,7 @@
 import { NewPoint } from "./Point";
+import { SurfaceType } from "./SurfaceType";
 
 export interface NewPath {
-  surface: string;
+  surface: SurfaceType;
   points: NewPoint[];
 }

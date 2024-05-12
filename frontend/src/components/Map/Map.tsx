@@ -18,7 +18,7 @@ const Map: FC<MapProps> = ({ children }) => {
       scrollWheelZoom={true}
       zoomControl={false}
     >
-      <LayersControl>
+      <LayersControl position="bottomright">
         {MAP_LAYERS.map(layer => (
           <LayersControl.BaseLayer key={layer.name} checked={layer.checked} name={layer.name}>
             {layer.url ? (

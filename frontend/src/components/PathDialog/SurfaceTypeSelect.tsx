@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { SURFACE_TYPES } from "@/constants/surfaceTypes";
 import {
   Select,
   SelectTrigger,
@@ -6,8 +7,6 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
-
-const SURFACE_TYPES = ["Asfalt", "Bruk", "Trasa leśna", "Trasa polna"];
 
 interface Props {
   value: string;
