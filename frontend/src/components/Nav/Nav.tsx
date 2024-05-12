@@ -8,7 +8,7 @@ const Nav: FC = () => {
   const [isNewPathDialogOpen, setIsNewPathDialogOpen] = useRecoilState(isNewPathDialogOpenState);
 
   return (
-    <nav className="flex w-16 flex-col items-center border border-r border-r-primary/20 bg-opacity-30 py-6 shadow-xl filter backdrop-blur-lg">
+    <nav className="flex h-screen w-16 flex-col items-center border-r bg-background/30 py-6 shadow-2xl filter backdrop-blur-xl">
       <Button
         variant={isNewPathDialogOpen ? "default" : "ghost"}
         size="icon"

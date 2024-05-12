@@ -14,7 +14,7 @@ const AddPathDialog: FC = () => {
   return (
     <>
       {isNewPathDialogOpen && (
-        <Card className="absolute z-[1000] m-4 w-[300px] bg-opacity-40 shadow-xl filter backdrop-blur-lg">
+        <Card className=" my-4 h-max w-[300px] bg-opacity-40 shadow-xl filter backdrop-blur-lg">
           <CardHeader>
             <CardTitle>Nowa trasa</CardTitle>
           </CardHeader>
